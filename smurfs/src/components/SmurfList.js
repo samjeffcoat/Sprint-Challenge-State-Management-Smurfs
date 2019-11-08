@@ -30,7 +30,7 @@ function SmurfList(props) {
     console.log('SmurfList', props);
     return (
         <>
-            <button onCLick= {() => props.dispatch(fetchSmurf())}>Get a Smurf</button>
+            <button onClick= {() => props.dispatch(fetchSmurf())}>Get a Smurf</button>
             {props.isFetching && <div>🚀</div>}
             {props.error && <div>{props.error.message}</div>}
             <ul>
