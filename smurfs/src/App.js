@@ -3,6 +3,7 @@ import "./App.css";
 import SmurfList from './smurfs/SmurfList';
 import { connect } from 'react-redux';
 import {fetchSmurf} from './actions';
+import SmurfForm from "./smurfs/SmurfForm";
 
 class App extends Component {
   componentDidMount(){
@@ -12,6 +13,7 @@ class App extends Component {
     return (
       <div className="App">
         <SmurfList/>
+        <SmurfForm/>
       </div>
     );
   }
