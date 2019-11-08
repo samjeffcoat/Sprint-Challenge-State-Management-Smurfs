@@ -9,10 +9,7 @@ import {
 const initialState = {
     smurfs: [],
     isFetching: false,
-    error: null,
-    name: ' ',
-    age: '  ',
-    height: ' '
+    error: " ",
 }
 
 //reducer built for initial state to get smurfs
@@ -22,18 +19,19 @@ function reducer(state= initialState, action){
         case FETCH_SMURF_START:
             return {
                 ...state,
-                smurfs: action.payload
+                error: "",
+                isFetching: true,
             };
         case FETCH_SMURF_SUCCESS:
             return{
                 ...state,
-                isFetching: true,
-                error : null
+                isFetching: false,
+                error : " ",
+                smurfs: action.payload
             }
         case FETCH_SMURF_FAILED:
             return {
                 ...state,
-                smurfs: [],
                 isFetching:false,
                 error: action.payload
             }
