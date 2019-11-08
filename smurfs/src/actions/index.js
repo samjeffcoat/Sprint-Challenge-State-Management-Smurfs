@@ -5,7 +5,7 @@ export const FETCHING_SMURF_SUCCESS = "FETCHING_SMURF_SUCCESS";
 export const FETCHING_SMURF_FAILED = "FETCHING_SMURF_FAILED";
 
 
-export const smurfLoading = () => ({type: FETCHING_SMURF_LOADING});
+export const smurfLoading = () => ({type: FETCHING_SMURF_START});
 export const smurfLoadSuccess = data => ({type: FETCHING_SMURF_SUCCESS, payload: data});
 export const smurfLoadFailure = error => ({type:FETCHING_SMURF_FAILED, payload: error});
 

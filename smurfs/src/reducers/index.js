@@ -1,6 +1,6 @@
 import {
     FETCHING_SMURF_FAILED,
-    FETCHING_SMURF_LOADING,
+    FETCHING_SMURF_START,
     FETCHING_SMURF_SUCCESS
 } from '../actions';
 //brings in our actions
@@ -16,7 +16,7 @@ const initialState = {
 function reducer(state= initialState, action){
     console.log('reducer', action);
     switch(action.type){
-        case FETCHING_SMURF_LOADING:
+        case FETCHING_SMURF_START:
             return {
                 ...state,
                 isFetching: true,
