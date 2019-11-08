@@ -2,7 +2,11 @@ import React from 'react';
 
 
 const Smurf = props => {
-    return <li>{props.smurf.name}{props.smurf.age}{props.smurf.height}</li>;
+    const {name, age, height} = props.smurfs;
+    return <li>
+  Name: {name}
+    Age: {age}
+    Height: {height}</li>;
 };
 
 export default Smurf; 
