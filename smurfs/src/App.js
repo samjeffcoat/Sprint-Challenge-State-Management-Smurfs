@@ -1,18 +1,20 @@
 import React, { Component } from "react";
 import "./App.css";
-import SmurfView from './smurfs/SmurfView';
+import SmurfList from './smurfs/SmurfList';
+import { connect } from 'react-redux';
+import {fetchSmurf} from './actions';
+
 class App extends Component {
+  componentDidMount(){
+    this.props.fetchSmurf();
+  }
   render() {
     return (
       <div className="App">
-        <h1>SMURFS! 2.0 W/ Redux</h1>
-        <div>Welcome to your state management version of Smurfs!</div>
-        <div>Start inside of your `src/index.js` file!</div>
-        <div>Have fun!</div>
-        <SmurfView />
+        <SmurfList/>
       </div>
     );
   }
 }
 
-export default App;
+export default connect(null, {fetchSmurf})(App);
