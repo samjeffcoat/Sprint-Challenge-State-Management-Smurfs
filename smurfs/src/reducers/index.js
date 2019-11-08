@@ -1,7 +1,7 @@
 import {
-    FETCHING_SMURF_FAILED,
-    FETCHING_SMURF_START,
-    FETCHING_SMURF_SUCCESS
+    FETCH_SMURF_FAILED,
+    FETCH_SMURF_START,
+    FETCH_SMURF_SUCCESS
 } from '../actions';
 //brings in our actions
 
@@ -16,19 +16,19 @@ const initialState = {
 function reducer(state= initialState, action){
     console.log('reducer', action);
     switch(action.type){
-        case FETCHING_SMURF_START:
+        case FETCH_SMURF_START:
             return {
                 ...state,
                 isFetching: true,
                 error:null
             };
-        case FETCHING_SMURF_SUCCESS:
+        case FETCH_SMURF_SUCCESS:
             return{
                 ...state,
                 isFetching: true,
                 error : null
             }
-        case FETCHING_SMURF_FAILED:
+        case FETCH_SMURF_FAILED:
             return {
                 ...state,
                 smurfs: [],
