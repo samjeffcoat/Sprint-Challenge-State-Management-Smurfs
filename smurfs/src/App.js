@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import "./App.css";
-import SmurfView from './SmurfView';
+import SmurfView from './smurfs/SmurfView';
 class App extends Component {
   render() {
     return (
