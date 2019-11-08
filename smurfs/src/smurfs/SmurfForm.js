@@ -1,9 +1,12 @@
-import React from 'react';
+import React, {useState} from 'react';
 import {connect} from 'react-redux';
+import { addSmurf, postSmurf} from '../actions';
 
 
-const SmurfForm = props => {
-    const {name, age, height} = props;
+const SmurfForm = () => {
+    const {smurfName, setSmurfName} = useState();
+    const [smurfAge, setSmurfAge]= useState();
+    const [smurfHeight, setSmurfHeight] = useState();
 
     return(
         <form>
