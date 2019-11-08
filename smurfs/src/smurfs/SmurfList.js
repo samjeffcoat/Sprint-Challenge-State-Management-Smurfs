@@ -1,6 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
-import Smurf from './Smurf'
+import Smurf from './Smurf';
+import {}
 
 const SmurfList = props => {
     return(
