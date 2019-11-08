@@ -1,7 +1,10 @@
 import {
     FETCH_SMURF_FAILED,
     FETCH_SMURF_START,
-    FETCH_SMURF_SUCCESS
+    FETCH_SMURF_SUCCESS,
+    ADD_SMURF,
+    POST_SMURF,
+    POST_SMURF_FAILED
 } from '../actions';
 //brings in our actions
 

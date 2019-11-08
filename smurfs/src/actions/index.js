@@ -3,6 +3,9 @@ import axios from 'axios'
 export const FETCH_SMURF_START= "FETCH_SMURF_START";
 export const FETCH_SMURF_SUCCESS = "FETCH_SMURF_SUCCESS";
 export const FETCH_SMURF_FAILED = "FETCH_SMURF_FAILED";
+export const ADD_SMURF = "ADD_SMURF";
+export const POST_SMURF = "POST_SMURF";
+export const POST_SMURF_FAILED= "POST_SMURF_FAILED";
 
 
 export const smurfLoading = () => ({type: FETCH_SMURF_START});
@@ -19,5 +22,16 @@ export const  fetchSmurf = ()=> dispatch => {
         .then(res => dispatch({type: FETCH_SMURF_SUCCESS, payload: res.data}))
         .catch(err => dispatch({type: FETCH_SMURF_FAILED, payload: err.response}))
     }
+export const postSmurf = (smurfs) => dispatch => {
+    dispatch({type: POST_SMURF});
+    axios
+        .post("http://localhost:3333/smurfs")
+        .then(res => dispatch({type: POST_SMURF, payload: res.data}))
+        .catch(err => dispatch({type: POST_SMURF_FAILED, payload: err}))
+}
 
-    
+export function addSmurf (name, age, height) {
+    return (dispatch) => {
+        dispatch({type: ADD_SMURF, payload: {name, age, height}})
+    }
+}
