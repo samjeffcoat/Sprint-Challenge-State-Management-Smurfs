@@ -35,6 +35,30 @@ function reducer(state= initialState, action){
                 isFetching:false,
                 error: action.payload
             }
+        case ADD_SMURF:
+            return{
+                ...state,
+                newSmurf: [
+                    {
+                        name: action.payload.name,
+                        age: action.payload.age,
+                        height: action.payload.height
+                    }
+                ]
+            }
+        case POST_SMURF:
+            return {
+                ...state,
+                isFetching: true,
+                addingSmurf: true
+            }
+        case POST_SMURF_FAILED:
+            return {
+                ...state, 
+                error: "",
+                isFetching: false
+            }
+
             default: 
             return state; 
     }
