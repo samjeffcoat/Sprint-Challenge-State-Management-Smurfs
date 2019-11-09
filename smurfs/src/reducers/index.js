@@ -3,6 +3,7 @@ import {
     FETCH_SMURF_START,
     FETCH_SMURF_SUCCESS,
     ADD_SMURF,
+    ADD_SMURF_SUCCESS,
     POST_SMURF,
     POST_SMURF_FAILED
 } from '../actions';
@@ -42,14 +43,16 @@ function reducer(state= initialState, action){
         case ADD_SMURF:
             return{
                 ...state,
-                newSmurf: [
-                    {
-                        name: action.payload.name,
-                        age: action.payload.age,
-                        height: action.payload.height
-                    }
-                ]
+                isAdding: true,
+                error: ' '
             }
+        case ADD_SMURF_SUCCESS: 
+        return {
+            ...state,
+            smurfs: action.payload,
+            isAdding: false,
+            error: ' '
+        }
         case POST_SMURF:
             return {
                 ...state,

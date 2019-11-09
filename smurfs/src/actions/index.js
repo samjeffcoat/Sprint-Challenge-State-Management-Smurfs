@@ -22,16 +22,16 @@ export const  fetchSmurf = ()=> dispatch => {
         .then(res => dispatch({type: FETCH_SMURF_SUCCESS, payload: res.data}))
         .catch(err => dispatch({type: FETCH_SMURF_FAILED, payload: err.response}))
     }
-export const postSmurf = (smurfs) => dispatch => {
-    dispatch({type: POST_SMURF});
+export const addSmurf = (smurf) => dispatch => {
+    dispatch({type: ADD_SMURF});
     axios
-        .post("http://localhost:3333/smurfs")
-        .then(res => dispatch({type: POST_SMURF, payload: res.data}))
+        .post("http://localhost:3333/smurfs", smurf)
+        .then(res => dispatch({type: ADD_SMURF, payload: res.data}))
         .catch(err => dispatch({type: POST_SMURF_FAILED, payload: err}))
 }
 
-export function addSmurf (name, age, height) {
-    return (dispatch) => {
-        dispatch({type: ADD_SMURF, payload: {name, age, height}})
-    }
-}
+// export function addSmurf (name, age, height) {
+//     return (dispatch) => {
+//         dispatch({type: ADD_SMURF, payload: {name, age, height}})
+//     }
+// }

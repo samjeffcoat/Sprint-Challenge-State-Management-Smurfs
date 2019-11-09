@@ -1,17 +1,17 @@
 import React, {useState} from 'react';
 import {connect} from 'react-redux';
-import { addSmurf, postSmurf} from '../actions';
+import { addSmurf} from '../actions';
 
 
 const SmurfForm = () => {
-    const {smurfName, setSmurfName} = useState();
+    const [smurfName, setSmurfName] = useState();
     const [smurfAge, setSmurfAge]= useState();
     const [smurfHeight, setSmurfHeight] = useState();
 
     const handleSubmit = e => {
         e.preventDefault();
-        addSmurf(smurfName, smurfAge,smurfHeight)
-        postSmurf(postSmurf);
+        addSmurf(smurfName, smurfAge,smurfHeight);
+
     }
 
     return(
@@ -47,4 +47,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(SmurfForm);
+export default connect(mapStateToProps, {})(SmurfForm);
