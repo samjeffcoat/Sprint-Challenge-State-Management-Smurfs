@@ -13,6 +13,7 @@ const initialState = {
     smurfs: [],
     isFetching: false,
     error: " ",
+    addingSmurf: false
 }
 
 //reducer built for initial state to get smurfs
@@ -58,7 +59,7 @@ function reducer(state= initialState, action){
         case POST_SMURF_FAILED:
             return {
                 ...state, 
-                error: "",
+                error: action.payload,
                 isFetching: false
             }
 
